@@ -1,11 +1,11 @@
-import { Link, NavLink } from 'react-router'
+import { Link } from 'react-router'
+import Button from './Button.jsx'
+import HandIcon from './HandIcon.jsx'
 import './Navbar.css'
 
 const navLinks = [
-  { to: '/dashboard', label: 'Dashboard' },
-  { to: '/studio', label: 'Studio' },
-  { to: '/projects', label: 'Projects' },
-  { to: '/settings', label: 'Settings' },
+  { to: '/', label: 'Home' },
+  { to: '/#features', label: 'Features' },
 ]
 
 function Navbar() {
@@ -13,19 +13,27 @@ function Navbar() {
     <header className="navbar">
       <nav className="navbar__inner" aria-label="Main navigation">
         <Link to="/" className="navbar__brand">
-          <span className="navbar__logo" aria-hidden="true" />
+          <span className="navbar__logo">
+            <HandIcon size={20} />
+          </span>
           GestureOS
         </Link>
 
-        <ul className="navbar__links">
-          {navLinks.map((link) => (
-            <li key={link.to}>
-              <NavLink to={link.to} className="navbar__link">
-                {link.label}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
+        <div className="navbar__right">
+          <ul className="navbar__links">
+            {navLinks.map((link) => (
+              <li key={link.to}>
+                <Link to={link.to} className="navbar__link">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <Button to="/#get-started" className="navbar__cta">
+            Get Started <span aria-hidden="true">↗</span>
+          </Button>
+        </div>
       </nav>
     </header>
   )

@@ -1,0 +1,48 @@
+.card {
+  --card-accent: var(--lime);
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform var(--transition-med),
+    box-shadow var(--transition-med);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* A short colored bar above the title marks each card's accent */
+.card::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 4px;
+  margin-bottom: var(--space-3);
+  border-radius: var(--radius-pill);
+  background: var(--card-accent);
+}
+
+.card--lime {
+  --card-accent: var(--lime);
+}
+
+.card--orange {
+  --card-accent: var(--orange);
+}
+
+.card--red {
+  --card-accent: var(--coral);
+}
+
+.card__title {
+  margin: 0 0 var(--space-2);
+  font-size: 1.2rem;
+}
+
+.card__body p {
+  margin: 0;
+}

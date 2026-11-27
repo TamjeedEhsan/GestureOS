@@ -1,0 +1,49 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    transform var(--transition-fast),
+    filter var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  filter: brightness(0.96);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+/* Sizes */
+.button--md {
+  padding: var(--space-2) var(--space-4);
+  font-size: 0.95rem;
+}
+
+.button--lg {
+  padding: 0.75rem var(--space-5);
+  font-size: 1rem;
+}
+
+/* Variants */
+.button--primary {
+  background: var(--color-primary);
+  color: var(--color-text-on-accent);
+}
+
+.button--secondary {
+  background: var(--color-secondary);
+  color: var(--color-text-inverse);
+}

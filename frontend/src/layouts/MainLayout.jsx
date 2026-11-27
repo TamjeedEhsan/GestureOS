@@ -9,6 +9,9 @@ function MainLayout() {
       <main className="main-layout__content">
         <Outlet />
       </main>
+      <footer className="main-layout__footer">
+        <p>GestureOS · Control beyond touch</p>
+      </footer>
     </div>
   )
 }

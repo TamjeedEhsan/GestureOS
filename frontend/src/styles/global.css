@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   background: var(--color-bg);
@@ -15,4 +19,25 @@ body {
 h1, h2, h3 {
   font-family: var(--font-heading);
   line-height: 1.2;
+}
+
+::selection {
+  background: var(--color-primary);
+  color: var(--color-text-on-accent);
+}
+
+/* Near-black outline: lime would be invisible on the soft-green background */
+:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    transition: none !important;
+  }
 }
